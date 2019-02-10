@@ -48,6 +48,11 @@ public class MainActivity extends AppCompatActivity implements  BottomNavigation
         ActivityUtil.getInstance().replaceToActivityFragment(getSupportFragmentManager() , scanListFragment , R.id.main_container);
 
 
+        if(RecodeDataBase.getInstance(this).recodeDao().getAll().size() < 1){
+            intentIntegrator.initiateScan();
+        }
+
+
 
     }
 
